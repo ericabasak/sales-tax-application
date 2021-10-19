@@ -1,0 +1,16 @@
+<h1>Sales#addItem</h1>
+<p>Find me in app/views/sales/addItem.html.erb</p>
+
+
+<table>
+<% @items.each do |p| %>
+    <tr><%= p %></tr>
+<% end %>
+<hr/>
+<tr>Total duty: <%= @total_duty %></tr>
+<tr>Total tax: <%= @total_tax %></tr>
+<tr>Total price: <%= @total_price %></tr>
+</table>
+
+<%= link_to 'Show', sales_show_url, method: :get %>
+

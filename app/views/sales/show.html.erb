@@ -1,0 +1,19 @@
+<h1>Sales#show(demo)</h1>
+
+<p>Find me in app/views/sales/show.html.erb</p>
+
+<p>Select items and place in basket...</p>
+
+<% @products.each do |p| %>
+    <%= p.name %>
+    <%= number_to_currency(p.price) %>
+    <%= p.imported %>
+<% end %>
+
+
+<%= form_with(scope: "products") do |p| %>
+    <%= p.select :name, @products.map { |p| [p.name]} %>
+    <%= p.submit %>
+  <% end %>
+  
+
