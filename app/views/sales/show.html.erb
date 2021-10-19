@@ -11,9 +11,13 @@
 <% end %>
 
 
-<%= form_with(scope: "products") do |p| %>
-    <%= p.select :name, @products.map { |p| [p.name]} %>
+<%= form_with(scope: 'products', url: '/sales/addItem', method: :post) do |p| %>
+    <%= p.select :id, @products.map { |p| [p.name, p.id]} %>
     <%= p.submit %>
+  <% end %>
+
+  <%= form_with(url: '/sales/clear_session', method: :post) do |form| %>
+    <%= form.submit "clear session"%>
   <% end %>
   
 

@@ -3,14 +3,21 @@
 
 
 <table>
-<% @items.each do |p| %>
-    <tr><%= p %></tr>
+<tr>
+<th>Name</th>
+<th>Price</th>
+</tr>
+<% @cart.each do |p| %>
+    <tr>
+    <td><%= p.name %></td>
+    <td><%= convert_to_dollars(p.price) %></td>
+    </tr>
 <% end %>
 <hr/>
-<tr>Total duty: <%= @total_duty %></tr>
-<tr>Total tax: <%= @total_tax %></tr>
-<tr>Total price: <%= @total_price %></tr>
 </table>
+
+<h4>Total tax <%= @total_tax %></h4>
+<h4>Total price <%= @total_price %></h4>
 
 <%= link_to 'Show', sales_show_url, method: :get %>
 
