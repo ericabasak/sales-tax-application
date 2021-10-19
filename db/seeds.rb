@@ -12,47 +12,56 @@ Product.destroy_all
 Product.create!([{
     name: "book",
     price: 1249,
-    imported: false
+    imported: false,
+    exempt: true
 },
 {
     name: "music CD",
     price: 1499,
-    imported: false
+    imported: false,
+    exempt: false
 },
 {
     name: "chocolate bar",
     price: 85,
-    imported: false
+    imported: false,
+    exempt: true
 },
 {
     name: "imported chocolates",
     price: 1000,
-    imported: true
+    imported: true,
+    exempt: true
 },
 {
     name: "perfume",
     price: 4750,
-    imported: true
+    imported: true,
+    exempt: false
 },
 {
     name: "imported bottle perfume",
     price: 2799,
-    imported: true
+    imported: true,
+    exempt: false
 },
 {
     name: "bottle perfume",
     price: 1899,
-    imported: false
+    imported: false,
+    exempt: false
 },
 {
     name: "headache pills",
     price: 975,
-    imported: false
+    imported: false,
+    exempt: true
 },
 {
     name: "imported chocolates",
     price: 1125,
-    imported: true
+    imported: true,
+    exempt: true
 }])
 
 p "Created #{Product.count} products"
