@@ -34,7 +34,7 @@ Product.create!([{
     exempt: true
 },
 {
-    name: "perfume",
+    name: "imported bottle perfume",
     price: 4750,
     imported: true,
     exempt: false
