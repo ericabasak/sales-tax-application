@@ -1,23 +1,28 @@
-<h1>Sales#show(demo)</h1>
+<h1>Sales Tax App</h1>
 
-<p>Find me in app/views/sales/show.html.erb</p>
+<h2>Select items and place in basket...</h2>
 
-<p>Select items and place in basket...</p>
-
-<% @products.each do |p| %>
+<!-- 
+<% @products.each do |p| %> 
     <%= p.name %>
     <%= number_to_currency(p.price) %>
-    <%= p.imported %>
+   <%= p.imported %>
 <% end %>
+-->
 
+&nbsp;
+&nbsp;
 
 <%= form_with(scope: 'products', url: '/sales/addItem', method: :post) do |p| %>
     <%= p.select :id, @products.map { |p| [p.name, p.id]} %>
     <%= p.submit %>
-  <% end %>
+<% end %>
 
-  <%= form_with(url: '/sales/clear_session', method: :post) do |form| %>
+&nbsp;
+&nbsp;
+
+<%= form_with(url: '/sales/clear_session', method: :post) do |form| %>
     <%= form.submit "clear session" %>
-  <% end %>
+<% end %>
   
 
