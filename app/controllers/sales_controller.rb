@@ -27,19 +27,7 @@ class SalesController < ApplicationController
 
     @total_tax = convert_to_dollars(calculate_tax(@cart))
     @total_import = convert_to_dollars(calculate_import(@cart))
-
     @total_price = convert_to_dollars(calculate_total_price(@cart) + calculate_tax(@cart) + calculate_import(@cart))
-    # @selected_products = session[:items]
-  
-    # @applicable_products = @products.filter()
-    # @total_tax = @applicable_products.sum(&:price) * (01)
-  
-    # @applicable_products_duty = @products.filter()
-    # @total_import_duty = @applicable_products_duty.sum(&:price) * (005)
-   
-    # @total_prices =  @selected_products.sum(&:price) + @total_tax + @total_import_duty
-   
-    # @total
   end
 
   def clear_session
@@ -56,9 +44,9 @@ class SalesController < ApplicationController
 
   private
 
-  def product_params
-    params.permit(:id)
-  end
+  # def product_params
+  #   params.permit(:id)
+  # end
 
   # calculates the sales tax which is 10% on all items EXCEPT books, food, medical
   def calculate_tax(products)
@@ -73,9 +61,6 @@ class SalesController < ApplicationController
     total_price_in_cents = imported_taxable_products.sum(&:price) 
     return total_price_in_cents * IMPORTED_SALES_TAX_RATE
   end
-
-  # non-exempt and imported => 10% + 5%
-  # ?????
 
   def calculate_total_price(products)
     products.sum(&:price)

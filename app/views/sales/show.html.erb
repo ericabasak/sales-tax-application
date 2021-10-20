@@ -1,6 +1,8 @@
 <h1>Sales Tax App</h1>
 
-<h2>Select items and place in basket...</h2>
+<h3> 1) Select one item at a time </h3>
+<h3> 2) Save </h3>
+<h3> 3) View basket </h3>
 
 <!-- 
 <% @products.each do |p| %> 
@@ -13,7 +15,7 @@
 &nbsp;
 &nbsp;
 
-<%= form_with(scope: 'products', url: '/sales/addItem', method: :post) do |p| %>
+<%= form_with(scope: "products", url: '/sales/addItem', method: :post) do |p| %>
     <%= p.select :id, @products.map { |p| [p.name, p.id]} %>
     <%= p.submit %>
 <% end %>
@@ -22,7 +24,7 @@
 &nbsp;
 
 <%= form_with(url: '/sales/clear_session', method: :post) do |form| %>
-    <%= form.submit "clear session" %>
+    <%= form.submit "Clear Session" %>
 <% end %>
   
 

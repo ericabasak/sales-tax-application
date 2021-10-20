@@ -1,5 +1,4 @@
-<h1>Sales#addItem</h1>
-<p>Find me in app/views/sales/addItem.html.erb</p>
+<h1>Sales Tax App </h1>
 
 <h3>Receipt of purchases</h3>
 
@@ -11,7 +10,7 @@
 <% @cart.each do |p| %>
     <tr>
     <td><%= p.name %></td>
-    <td><%= convert_to_dollars(p.price) %></td>
+    <td>$<%= convert_to_dollars(p.price) %></td>
     </tr>
 <% end %>
 <hr/>
@@ -23,5 +22,5 @@
 
 <h4>Total price $ <%= @total_price %></h4>
 
-<%= link_to 'Show', sales_show_url, method: :get %>
+<%= link_to 'Back', sales_show_url, method: :get %>
 
