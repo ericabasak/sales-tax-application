@@ -1,25 +1,25 @@
 # README
+Sales Tax App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sale tax application applies 10% tax to all items excepts books, food, and medical items which are exempt. Also, items that are imported have an additional duty tax of .05%. 
 
-Things you may want to cover:
+Ruby version 2.6.3
 
-* Ruby version
+Rails 6.1.4.1
 
-* System dependencies
+Start rails server - rails s
 
-* Configuration
+Visit site at http://localhost:3000/sales/show
 
-* Database creation
+Check out repository -
+git clone https://github.com/ericabasak/sales-tax-application.git
 
-* Database initialization
+Database creation - postgreSQL
 
-* How to run the test suite
+Database initialization - 
+rails db:create db:migrate db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+How to run the test suite - bundle exec rspec
 
 * ...
 # sales-tax-application
