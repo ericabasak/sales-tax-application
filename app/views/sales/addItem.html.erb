@@ -1,4 +1,4 @@
-<h1>Sales Tax App </h1>
+<h1>Sales Tax App</h1>
 
 <h3>Receipt of purchases</h3>
 
@@ -13,14 +13,11 @@
     <td>$<%= convert_to_dollars(p.price) %></td>
     </tr>
 <% end %>
-<hr/>
 </table>
 
-<h4>Total sales tax $ <%= @total_tax %></h4>
-
-<h4>Total import tax $ <%= @total_import %></h4>
-
-<h4>Total price $ <%= @total_price %></h4>
+<h4>Total sales tax $ <%= convert_to_dollars(@total_tax) %></h4>
+<h4>Total import tax $ <%= convert_to_dollars(@total_import) %></h4>
+<h4>Total price $ <%= convert_to_dollars(@total_price) %></h4>
 
 <%= link_to 'Back', sales_show_url, method: :get %>
 
